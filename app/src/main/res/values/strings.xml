@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">Chat App</string>
+    <string name="enter_name">Enter name</string>
+    <string name="enter_email">Enter email</string>
+    <string name="enter_password">Enter password</string>
+    <string name="conform_password">Conform password</string>
+    <string name="sign_up">Sign Up</string>
 </resources>
