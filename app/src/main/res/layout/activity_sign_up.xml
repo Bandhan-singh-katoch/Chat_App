@@ -13,6 +13,7 @@
         android:layout_height="wrap_content"
         android:text="@string/sign_up"
         android:textStyle="bold"
+        android:fontFamily="@font/gilroy_bold"
         android:textSize="20sp"
         android:layout_marginStart="15dp"
         android:layout_marginBottom="10dp"
@@ -26,6 +27,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textColor="@color/colorText"
+            android:fontFamily="@font/gilroy_light"
             android:layout_marginStart="15dp"
             android:layout_marginEnd="15dp"
             android:layout_marginTop="5dp"
@@ -38,6 +40,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textColor="@color/colorText"
+
+            android:fontFamily="@font/gilroy_light"
             android:layout_marginStart="15dp"
             android:layout_marginEnd="15dp"
             android:layout_marginTop="5dp"
@@ -51,6 +55,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textColor="@color/colorText"
+            android:fontFamily="@font/gilroy_light"
             android:layout_marginStart="15dp"
             android:layout_marginEnd="15dp"
             android:layout_marginTop="5dp"
@@ -64,6 +69,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textColor="@color/colorText"
+            android:fontFamily="@font/gilroy_light"
             android:layout_marginStart="15dp"
             android:layout_marginEnd="15dp"
             android:layout_marginTop="5dp"
@@ -71,6 +77,36 @@
             android:layout_margin="15dp"
             android:padding="12dp"
             android:hint="@string/conform_password" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/btnSignUp"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_marginEnd="2dp"
+            android:layout_height="wrap_content"
+            android:background="@color/colorPrimary"
+            android:text="@string/btn_sign_up"
+            android:textColor="@color/colorAccent"/>
+
+        <Button
+            android:id="@+id/btnLogin"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="2dp"
+            android:background="@color/colorPrimary"
+            android:text="@string/btn_login"
+            android:textColor="@color/colorAccent"/>
+
+
+    </LinearLayout>
+
 
 
 </LinearLayout>
