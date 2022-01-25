@@ -50,4 +50,10 @@ dependencies {
     implementation 'com.google.firebase:firebase-database:20.0.3'
     implementation 'com.google.firebase:firebase-core:20.0.2'
     implementation 'com.google.firebase:firebase-auth:21.0.1'
+
+    //material design library
+    implementation 'com.google.android.material:material:1.5.0'
+
+    //circle image view library
+    implementation 'de.hdodenhof:circleimageview:3.1.0'
 }

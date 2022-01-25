@@ -1,11 +1,11 @@
-package com.example.chatapp
+package com.example.chatapp.activity
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.text.TextUtils
-import android.widget.Button
 import android.widget.Toast
+import com.example.chatapp.R
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
 import com.google.firebase.database.DatabaseReference
@@ -49,7 +49,7 @@ class SignUpActivity : AppCompatActivity() {
         }
 
         btnLogin.setOnClickListener {
-            val intent = Intent(this@SignUpActivity,LoginActivity::class.java)
+            val intent = Intent(this@SignUpActivity, LoginActivity::class.java)
             startActivity(intent)
         }
     }
@@ -74,7 +74,7 @@ class SignUpActivity : AppCompatActivity() {
                             etEmail.setText("")
                             etPassword.setText("")
                             etConformPassword.setText("")
-                            val intent = Intent(this@SignUpActivity,HomeActivity::class.java)
+                            val intent = Intent(this@SignUpActivity, HomeActivity::class.java)
                             startActivity(intent)
                         }
                     }
