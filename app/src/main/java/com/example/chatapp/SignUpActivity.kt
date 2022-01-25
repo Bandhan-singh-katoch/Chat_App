@@ -27,7 +27,7 @@ class SignUpActivity : AppCompatActivity() {
             val userName = etName.text.toString()
             val email = etEmail.text.toString()
             val password = etPassword.text.toString()
-            val confirmPassword = etConfigurePassword.text.toString()
+            val confirmPassword = etConformPassword.text.toString()
 
             if(TextUtils.isEmpty(userName)){
                 Toast.makeText(applicationContext,"username is required",Toast.LENGTH_SHORT).show()
@@ -47,6 +47,11 @@ class SignUpActivity : AppCompatActivity() {
             registerUser(userName,email,password)
 
         }
+
+        btnLogin.setOnClickListener {
+            val intent = Intent(this@SignUpActivity,LoginActivity::class.java)
+            startActivity(intent)
+        }
     }
 
     private fun registerUser(userName:String,email:String,password:String){
@@ -65,6 +70,10 @@ class SignUpActivity : AppCompatActivity() {
 
                     databaseReference.setValue(hashMap).addOnCompleteListener(this){
                         if(it.isSuccessful){
+                            etName.setText("")
+                            etEmail.setText("")
+                            etPassword.setText("")
+                            etConformPassword.setText("")
                             val intent = Intent(this@SignUpActivity,HomeActivity::class.java)
                             startActivity(intent)
                         }
