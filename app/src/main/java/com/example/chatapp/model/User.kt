@@ -1,4 +1,3 @@
 package com.example.chatapp.model
 
-class User {
-}
+data class User(val userName:String, val userImage: String)

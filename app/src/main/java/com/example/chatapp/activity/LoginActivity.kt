@@ -30,7 +30,7 @@ class LoginActivity : AppCompatActivity() {
                         if(it.isSuccessful){
                             etEmail.setText("")
                             etPassword.setText("")
-                            val intent = Intent(this@LoginActivity, HomeActivity::class.java)
+                            val intent = Intent(this@LoginActivity, UsersActivity::class.java)
                             startActivity(intent)
                         }else{
                             Toast.makeText(applicationContext,"email or password invalid",Toast.LENGTH_SHORT).show()

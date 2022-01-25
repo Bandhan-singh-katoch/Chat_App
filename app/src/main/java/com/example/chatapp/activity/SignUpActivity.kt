@@ -74,7 +74,7 @@ class SignUpActivity : AppCompatActivity() {
                             etEmail.setText("")
                             etPassword.setText("")
                             etConformPassword.setText("")
-                            val intent = Intent(this@SignUpActivity, HomeActivity::class.java)
+                            val intent = Intent(this@SignUpActivity, UsersActivity::class.java)
                             startActivity(intent)
                         }
                     }
