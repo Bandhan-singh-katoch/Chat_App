@@ -17,6 +17,7 @@
             android:id="@+id/imgBack"
             android:layout_width="32dp"
             android:layout_height="32dp"
+            android:layout_marginStart="10dp"
             android:padding="5dp"
             android:src="@drawable/ic_back"/>
 
