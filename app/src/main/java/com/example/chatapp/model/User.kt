@@ -1,3 +1,3 @@
 package com.example.chatapp.model
 
-data class User(val userName:String, val userImage: String)
+data class User(var userId:String = "", var userName:String = "", var userImage: String = "")
