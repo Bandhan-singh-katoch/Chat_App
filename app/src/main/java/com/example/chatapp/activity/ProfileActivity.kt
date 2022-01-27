@@ -1,9 +1,12 @@
 package com.example.chatapp.activity
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
+import android.graphics.Bitmap
+import android.net.Uri
 import android.os.Bundle
+import android.provider.MediaStore
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import com.bumptech.glide.Glide
 import com.example.chatapp.R
 import com.example.chatapp.model.User
@@ -13,11 +16,16 @@ import com.google.firebase.database.*
 import kotlinx.android.synthetic.main.activity_profile.*
 import kotlinx.android.synthetic.main.activity_users.*
 import kotlinx.android.synthetic.main.activity_users.imgBack
+import java.io.IOException
 
 class ProfileActivity : AppCompatActivity() {
 
     private lateinit var firebaseUser: FirebaseUser
     private lateinit var databaseReference: DatabaseReference
+
+    private var filePath: Uri? = null
+
+    private val PICK_IMAGE_REQUEST: Int = 2022
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -48,5 +56,25 @@ class ProfileActivity : AppCompatActivity() {
             onBackPressed()
         }
 
+    }
+
+    private fun chooseImage(){
+        val intent:Intent = Intent()
+        intent.type = "image/*"
+        intent.action = Intent.ACTION_GET_CONTENT
+        startActivityForResult(Intent.createChooser(intent,"Select Image"),PICK_IMAGE_REQUEST)
+    }
+
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        super.onActivityResult(requestCode, resultCode, data)
+        if(requestCode == PICK_IMAGE_REQUEST && resultCode != null){
+            filePath = data!!.data
+            try {
+                var bitmap:Bitmap = MediaStore.Images.Media.getBitmap(contentResolver,filePath)
+                userImage.setImageBitmap(bitmap)
+            }catch (e:IOException){
+                e.printStackTrace()
+            }
+        }
     }
 }

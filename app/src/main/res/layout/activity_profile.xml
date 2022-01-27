@@ -70,6 +70,17 @@
                 android:maxLines="1"
                 tools:text="Bandhan Singh" />
 
+            <Button
+                android:id="@+id/btnSave"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="15dp"
+                android:layout_marginEnd="2dp"
+                android:background="@color/colorPrimary"
+                android:text="@string/save"
+                android:visibility="gone"
+                android:textColor="@color/colorAccent" />
+
         </LinearLayout>
 
     </androidx.cardview.widget.CardView>
