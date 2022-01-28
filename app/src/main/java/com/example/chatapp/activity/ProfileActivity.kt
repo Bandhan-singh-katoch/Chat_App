@@ -53,10 +53,10 @@ class ProfileActivity : AppCompatActivity() {
                 val user = snapshot.getValue(User::class.java)
                 etUserName.setText(user!!.userName)
 
-                if(user.userImage == ""){
+                if(user.profileImage == ""){
                     userImage.setImageResource(R.drawable.proflie_img)
                 }else{
-                    Glide.with(this@ProfileActivity).load(user.userImage).into(userImage)
+                    Glide.with(this@ProfileActivity).load(user.profileImage).into(userImage)
                 }
             }
 
@@ -111,7 +111,7 @@ class ProfileActivity : AppCompatActivity() {
 
                     val hashMap:HashMap<String,String> = HashMap()
                     hashMap.put("userName",etUserName.text.toString())
-                    hashMap.put("userImage","")
+                    hashMap.put("userImage",filePath.toString())
                     databaseReference.updateChildren(hashMap as Map<String,Any>)
 
                     progressBar.visibility = View.GONE
